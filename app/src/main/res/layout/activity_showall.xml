@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Showall">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tt"
+    ></TextView>
+<EditText
+    android:id="@+id/name_img"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</EditText>
+
+    <Button
+        android:layout_below="@+id/name_img"
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pick image"></Button>
+    <TextView
+        android:id="@+id/result1"
+        android:layout_below="@id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:id="@+id/result2"
+        android:layout_below="@id/result1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <ImageView
+        android:id="@+id/setImageView"
+        android:src="@drawable/back"
+        android:layout_below="@+id/result2"
+         android:layout_width="match_parent"
+        android:layout_height="200dp"></ImageView>
+
+    <Button
+        android:layout_below="@+id/setImageView"
+        android:id="@+id/upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="upload image"></Button>
+</RelativeLayout>

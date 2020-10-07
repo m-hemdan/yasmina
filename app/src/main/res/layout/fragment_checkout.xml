@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yasmina.CheckoutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:listitem="@layout/item_product"
+        android:id="@+id/checkout">
+    </androidx.recyclerview.widget.RecyclerView>
+    <Button
+        android:id="@+id/date_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select time">
+   </Button>
+    <TextView
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="totalCost"
+        android:id="@+id/totalCost">
+
+    </TextView>
+
+
+</LinearLayout>

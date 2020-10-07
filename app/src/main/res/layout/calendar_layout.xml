@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/ItemLayout"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary_text">
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp"
+            android:id="@+id/nameItem"
+            android:textColor="@color/textWhite"
+            android:textStyle="bold"
+            style="@style/defaultFont"
+            android:textAllCaps="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name of item">
+
+        </TextView>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-3dp"
+            android:id="@+id/subItem"
+            android:layout_below="@+id/nameItem"
+
+            android:textColor="@color/colorBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sub Item "></TextView>
+        <LinearLayout
+            android:layout_below="@id/subItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/text_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration : "></TextView>
+            <TextView
+                style="@style/defaultFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="duration"
+                android:id="@+id/durationItem">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_below="@id/subItem"
+            >
+            <TextView
+                style="@style/text_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price :"></TextView>
+            <TextView
+                style="@style/defaultFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="price"
+                android:id="@+id/priceItem">
+            </TextView>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:drawableLeft="@drawable/ic_arrow_left"
+            android:text="prev"></Button>
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:text="next"></Button>
+    </RelativeLayout>
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginTop="-5dp"
+        android:id="@+id/compactcalendar_view"
+        android:layout_width="match_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_height="250dp"
+        app:compactCalendarTargetHeight="250dp"
+        app:compactCalendarTextSize="12sp"
+        app:compactCalendarBackgroundColor="#b6b8c3"
+        app:compactCalendarTextColor="#000"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
+        app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
+        app:compactCalendarMultiEventIndicatorColor="#fff"
+        />
+    <Button
+        android:layout_marginTop="-5dp"
+        android:backgroundTint="#d81b60"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  مشاهدة جميع المواعيد المتاحة"
+        android:id="@+id/showList"></Button>
+</LinearLayout>

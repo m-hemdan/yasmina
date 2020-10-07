@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.yasmina.checkOut">
+
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordianteLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/itemInCheckOutRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_checkout"></androidx.recyclerview.widget.RecyclerView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <RelativeLayout
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/coordianteLayout"
+            android:layout_marginTop="5dp"
+            android:background="@color/divider"></RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divider"
+            android:padding="10dp">
+
+            <TextView
+
+                android:id="@+id/numItemCheckOut"
+                style="@style/defaultFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Item : ">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/MnumItemCheckOut"
+                style="@style/defaultFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/numItemCheckOut"
+                android:text="5">
+
+            </TextView>
+
+            <TextView
+
+                android:id="@+id/numOfHours"
+                style="@style/defaultFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/numItemCheckOut"
+                android:text="Number of Hours : ">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/MnumOfHours"
+                style="@style/defaultFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MnumItemCheckOut"
+                android:layout_toRightOf="@+id/numOfHours"
+                android:text="6">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/totalPrice"
+                style="@style/defaultFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/MnumOfHours"
+                android:text="Total Price ">
+
+            </TextView>
+
+            <TextView
+                style="@style/defaultFont"
+                android:id="@+id/mTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MnumOfHours"
+                android:layout_marginEnd="40dp"
+                android:layout_toRightOf="@+id/totalPrice"
+                android:text="12"></TextView>
+            <Button
+                android:id="@+id/pushDatabase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="register now"
+                android:layout_below="@id/mTotalPrice">
+            </Button>
+        </RelativeLayout>
+
+</RelativeLayout>

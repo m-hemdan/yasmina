@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yasmina</string>
+    <string name="show">"مشاهده الكل "</string>
+    <string name="register">تسجيل الان</string>
+    <string name="Currency">جنيه</string>
+    <string name="sureTime">"هل انت متاكد من تحديد المعاد "</string>
+    <string name="information_one">"السعر و الزمن يعتمد عل طول و كثافه الشعر "</string>
+    <string name="warning_one">من فضلك تأكد من ادخال كثافه و طول الشعراولا</string>
+    <string name="addOrder">تاكيد المعاد</string>
+    <string name="keepshoping">استمر ف التسوق</string>
+    <string name="selectdate">" تحديد المعاد و الوقت "</string>
+    <string name="offlineText">من فضلك تأكد من وصول شبكه الانترنت</string>
+    <string name="tryAgain">"اعاده المحاوله "</string>
+</resources>

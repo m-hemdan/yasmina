@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+android:id="@+id/relative_layout_register"
+  android:background="@drawable/shadow"
+
+    >
+
+    <ImageView
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/clock_img"
+        android:src="@drawable/clock_ten">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/time_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/clock_img"
+        android:ellipsize="marquee"
+          android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="time_in_day"
+        android:textSize="20dp"></TextView>
+<!--<Button
+android:layout_alignParentRight="true"
+   android:backgroundTint="#00897B"
+    android:layout_alignParentTop="true"
+    android:layout_alignWithParentIfMissing="true"
+    android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+    android:text=" حجز "
+    android:id="@+id/btn_Time"
+    ></Button>-->
+<androidx.appcompat.widget.AppCompatButton
+    android:layout_alignParentRight="true"
+
+    android:layout_alignParentTop="true"
+    android:layout_alignWithParentIfMissing="true"
+    android:textStyle="bold"
+    android:textColor="@color/textWhite"
+    android:text=" حجز "
+    android:id="@+id/btn_Time"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_shadow">
+
+</androidx.appcompat.widget.AppCompatButton>
+</RelativeLayout>

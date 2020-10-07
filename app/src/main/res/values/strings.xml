@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Yasmina</string>
+    <string name="show">Show All</string>
+    <string name="register">register now</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="swipe_left_for_register" translatable="false">Swipe Left for Register</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="e_mail" translatable="false">Email</string>
+    <string name="tag" translatable="false">Let\'s join us and \nBuild your relationship with others</string>
+    <string name="swipe_right_for_login" translatable="false">Swipe Right for Login</string>
+
+    <string name="re_type_password" translatable="false">Re-type Password</string>
+    <string name="your_name" translatable="false">Full Name</string>
+    <string name="Currency"></string>
+    <string name="sureTime">هل انت متاكد من اختيار المعاد  </string>
+    <string name="information_one">The price and duration depend on the length and density of the hair</string>
+
+    <string name="warning_one">Please Choose the length and density in the first</string>
+    <string name="addOrder">Add To Your Bag</string>
+
+    <string name="keepshoping">keep shoping</string>
+    <string name="selectdate">select  date and  time</string>
+    <string name="offlineText">Make sure you\'re connected to the internet and try again.</string>
+    <string name="tryAgain">try again</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+</resources>

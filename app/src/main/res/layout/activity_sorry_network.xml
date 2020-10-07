@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.yasmina.SorryNetwork">
+
+    <ImageView
+        android:padding="12dp"
+   android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"></ImageView>
+
+<ImageView
+    android:id="@+id/imageOffline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/offline"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true">
+
+</ImageView>
+    <TextView
+        android:id="@+id/textOffline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/offlineText"
+        style="@style/defaultFont"
+        android:layout_below="@+id/imageOffline"
+       android:gravity="center">
+
+    </TextView>
+    <Button
+        android:id="@+id/tryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tryAgain"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textOffline">
+
+    </Button>
+</RelativeLayout>

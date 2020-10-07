@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <include layout="@layout/toolbar"></include>
+    <RelativeLayout
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="10">
+<ProgressBar
+    android:id="@+id/prograss_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+
+
+    ></ProgressBar>
+
+
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/colorBack"
+        app:itemTextColor="@color/colorBack"
+       app:menu="@menu/navigation"/>
+    </LinearLayout>
+</LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation"
+       app:itemTextColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/navbar_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

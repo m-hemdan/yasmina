@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="MyTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="text_card" >
+        <item name="android:textColor">@color/primary_text</item>
+      <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:textAppearance">?attr/textAppearanceHeadline4</item>
+        <item name="android:fontFamily">@font/indigo_daisy</item>
+
+          </style>
+    <style name="sub_text">
+        <item name="android:textColor">@color/sub_text_color</item>
+         <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">5dp</item>
+       </style>
+    <style name="result_text">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:fontFamily">@font/indigo_daisy</item>
+        <item name="android:textSize">?attr/textAppearanceHeadline4</item>
+    </style>
+    <style name="warning_text">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+    <style name="defaultFont">
+        <item name="android:color">@color/primary_text</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

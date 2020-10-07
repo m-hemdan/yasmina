@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/make_up"
+        android:icon="@drawable/icon_makeup"
+        android:title="Make Up"/>
+
+    <item
+        android:id="@+id/hair"
+        android:icon="@drawable/icon_hair"
+       android:title="Hair"/>
+
+    <item
+        android:id="@+id/other"
+        android:icon="@drawable/icon_other"
+        android:title="Other"/>
+
+</menu>

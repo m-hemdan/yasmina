@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yasmina.DateActivity"
+    >
+    <include android:id="@+id/toolbarLayout" layout="@layout/toolbar_calendar"></include>
+    <LinearLayout
+        android:layout_below="@id/toolbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <LinearLayout
+
+        android:id="@+id/linearLayoutDate"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/calendar_layout"></include>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/toolbarLayout"
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/linearLayoutDate">
+        <include layout="@layout/select_clock_layout"></include>
+    </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
