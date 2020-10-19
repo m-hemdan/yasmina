@@ -239,9 +239,10 @@ public class DateActivity extends AppCompatActivity {
                     for (Event booking : bookingsFromMap) {
                         mutableBookings.add((String) booking.getData());
                     }
-                    AdapterTime = new TimeInDayadapter(tTimeList, DateActivity.this, mutableBookings, ccurrentDate.substring(0, 10),modelProduct);
-                    recyclerView.setAdapter(AdapterTime);
-                    AdapterTime.notifyDataSetChanged();
+                  AdapterTime = new TimeInDayadapter(tTimeList, DateActivity.this, mutableBookings, ccurrentDate.substring(0, 10),modelProduct);
+                  Log.v("timeInDayAdapter",mutableBookings.toString());
+                  recyclerView.setAdapter(AdapterTime);
+                  AdapterTime.notifyDataSetChanged();
                 }
                 currentdateView.setText(" المواعيد المتاحه " + ccurrentDate.substring(0, 10) + " " + dayOfTheWeek + " ");
             }

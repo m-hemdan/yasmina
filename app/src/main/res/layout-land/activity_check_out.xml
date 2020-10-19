@@ -7,24 +7,30 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     >
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:elevation="3dp"
-    tools:context="com.example.yasmina.checkOut">
-    <include layout="@layout/toolbar"></include>
-    <include layout="@layout/checkout_firstpart"
-        android:layout_height="0dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="1"></include>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:elevation="3dp"
+        tools:context="com.example.yasmina.checkOut">
+        <include layout="@layout/toolbar"></include>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        <include layout="@layout/checkout_firstpart"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="2"></include>
 
-   <include layout="@layout/checkout_second_part"
-       android:layout_height="0dp"
-       android:layout_width="match_parent"
-       android:layout_weight="1.5" ></include>
+        <include layout="@layout/checkout_second_part"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1" ></include>
+        </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
         app:itemTextColor="@color/colorPrimary"

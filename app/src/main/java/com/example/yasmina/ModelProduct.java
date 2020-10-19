@@ -10,6 +10,7 @@ public class ModelProduct {
    private int timeWithOwner;
    String time;
    String selectDate;
+   private String imageHair;
 
     public  ModelProduct()
     {}
@@ -38,7 +39,16 @@ public class ModelProduct {
         durationProduct=mDurationProduct;
         timeWithOwner=mTimeWithOwner;
     }
-    public ModelProduct(String mTextProduct,String mSubTextProduct,String mPriceProduct,int mDurationProduct,int mTimeWithOwner,String mTime,String mSelectDate)
+    public ModelProduct(String mTextProduct,String mSubTextProduct,String mPriceProduct,int mDurationProduct,int mTimeWithOwner,String mImageHair)
+    {
+        textProduct=mTextProduct;
+        subTextProduct=mSubTextProduct;
+        priceProduct=mPriceProduct;
+        durationProduct=mDurationProduct;
+        timeWithOwner=mTimeWithOwner;
+        imageHair=mImageHair;
+    }
+    public ModelProduct(String mTextProduct,String mSubTextProduct,String mPriceProduct,int mDurationProduct,int mTimeWithOwner,String mTime,String mSelectDate,String mImg)
     {
         textProduct=mTextProduct;
         subTextProduct=mSubTextProduct;
@@ -47,6 +57,8 @@ public class ModelProduct {
         timeWithOwner=mTimeWithOwner;
         time=mTime;
         selectDate=mSelectDate;
+        imageHair=mImg;
+
     }
     public String getTime() {
         return time;
@@ -73,6 +85,10 @@ public class ModelProduct {
 
     public int getDurationProduct() {
         return durationProduct;
+    }
+
+    public String getImageHair() {
+        return imageHair;
     }
 
     public String getDensityProduct() {

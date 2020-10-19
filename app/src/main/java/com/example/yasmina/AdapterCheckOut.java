@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import io.paperdb.Paper;
@@ -20,11 +23,16 @@ public class AdapterCheckOut extends RecyclerView.Adapter<AdapterCheckOut.ViewHo
     Context mContext;
      int totalSum=0;
      int totalHr=0;
+     ViewHolder mHolder;
+    Controller globalControl;
+    ModelProduct currentPosition;
+
 
     public AdapterCheckOut(List<ModelProduct> list, Context context)
     {
         mList=list;
         mContext=context;
+
     }
 
     @NonNull
@@ -37,11 +45,14 @@ public class AdapterCheckOut extends RecyclerView.Adapter<AdapterCheckOut.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ModelProduct currentPosition=mList.get(position);
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        globalControl =(Controller)mContext.getApplicationContext();
+        mHolder=holder;
+         currentPosition=mList.get(position);
         Log.v("model product",currentPosition.getTextProduct());
         holder.name.setText(currentPosition.getTextProduct());
         holder.subText.setText(currentPosition.getSubTextProduct());
+        holder.numHr.setText(currentPosition.getDurationProduct()+" HR  ");
         holder.price.setText(currentPosition.getPriceProduct()+"$");
         totalSum+=Integer.valueOf(currentPosition.getPriceProduct());
         totalHr+=Integer.valueOf(currentPosition.getDurationProduct());
@@ -49,6 +60,16 @@ public class AdapterCheckOut extends RecyclerView.Adapter<AdapterCheckOut.ViewHo
             @Override
             public void onClick(View v) {
                 deleteItemFun();
+            }
+        });
+        Picasso.get().load(currentPosition.getImageHair()).into(holder.imgHair, new Callback() {
+            @Override
+            public void onSuccess() {
+            }
+
+            @Override
+            public void onError(Exception e) {
+
             }
         });
     }
@@ -63,6 +84,7 @@ public class AdapterCheckOut extends RecyclerView.Adapter<AdapterCheckOut.ViewHo
     public void notifyData(List<ModelProduct> listModelproduct) {
         mList=listModelproduct;
         notifyDataSetChanged();
+
     }
     public  void removeItem(int position) {
         mList.remove(position);
@@ -71,39 +93,39 @@ public class AdapterCheckOut extends RecyclerView.Adapter<AdapterCheckOut.ViewHo
         Paper.book().write("modelproductList",mList);
         notifyItemRemoved(position);
 
+        ((checkOut)mContext).calculatePriceCheckOut();
+
     }
 
     public void restoreItem(ModelProduct modelProduct, int position) {
         mList.add(position, modelProduct);
         notifyItemInserted(position);
+        ((checkOut)mContext).calculatePriceCheckOut();
+
+
+
     }
-   public LastPrice calculatePrice()
-   {
-       for (int i=0;i<mList.size();i++)
-       {
-           totalSum+=Integer.valueOf(mList.get(i).getPriceProduct());
-           totalHr+=Integer.valueOf(mList.get(i).getDurationProduct());
-       }
-       LastPrice lastPrice=new LastPrice(totalSum,totalHr,mList.size());
-       return lastPrice;
-   }
+
     public List<ModelProduct> getData() {
         return mList;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
             TextView name;
             TextView subText;
             TextView price;
-            TextView mtotalPriceTextView,numofHrTextView,numOfItemTextView;
-            ImageView deleteItem;
+            TextView numHr;
+            ImageView deleteItem,imgHair;
+            TextView numOfHrTextView,numOfItemTextView,totalPriceTextView;
                 public ViewHolder(@NonNull View itemView) {
                     super(itemView);
-                    name=(TextView)itemView.findViewById(R.id.name);
-                    subText=(TextView)itemView.findViewById(R.id.sub_text);
-                    price=(TextView)itemView.findViewById(R.id.price);
+                    name=(TextView)itemView.findViewById(R.id.product_title);
+                    subText=(TextView)itemView.findViewById(R.id.product_Sub_title);
+                    price=(TextView)itemView.findViewById(R.id.product_price);
                     deleteItem=(ImageView)itemView.findViewById(R.id.deleteItem);
-
+                    numHr=(TextView)itemView.findViewById(R.id.num_of_hr);
+                    imgHair=(ImageView)itemView.findViewById(R.id.product_image);
 
 
                 }

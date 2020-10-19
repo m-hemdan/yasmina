@@ -20,6 +20,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 
 public class SwapToDeleteItem extends ItemTouchHelper.Callback {
+    checkOut checkOutClass;
     Context mContext;
     private Paint mClearPaint;
     private ColorDrawable mBackground;
@@ -103,6 +104,7 @@ public class SwapToDeleteItem extends ItemTouchHelper.Callback {
         });
         snackbar.setActionTextColor(Color.YELLOW);
         snackbar.show();
-    }
+
+            }
 };
 

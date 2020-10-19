@@ -162,10 +162,11 @@ public class AdapterProtine extends RecyclerView.Adapter<AdapterProtine.ViewHold
                 if (densityHair[0] != "" && lengthHair[0] != "") {
                     String text = mList.get(position).getText();
                     String subText = mList.get(position).getSubtext();
-                    String price = mList.get(position).getPrice();
+
                     int duration = mList.get(position).getDuration();
                     int timeWithOwner =mList.get(position).getTimeInHr();
-                    final ModelProduct modelProduct = new ModelProduct(text, subText, String.valueOf(totalPrice), duration,timeWithOwner);
+                    String imgHair=mList.get(position).getImg();
+                    final ModelProduct modelProduct = new ModelProduct(text, subText, String.valueOf(totalPrice), duration,timeWithOwner,imgHair);
                            InternetConnection internetConnection=new InternetConnection();
                             if (internetConnection.isConnected(mContext)) {
                                Intent intent = new Intent(mContext, DateActivity.class);

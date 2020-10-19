@@ -39,6 +39,7 @@ import java.util.List;
 import io.paperdb.Paper;
 
 public class TimeInDayadapter extends RecyclerView.Adapter<TimeInDayadapter.ViewHolder> {
+    int counter=0;
     List<TimeClass> mTimeList;
     Context mContext;
     FirebaseDatabase firebaseDatabase;
@@ -64,8 +65,6 @@ public class TimeInDayadapter extends RecyclerView.Adapter<TimeInDayadapter.View
         mCurrentDate=currentDate;
        mSelectDate=selectedDate;
        mModelProduct=modelProduct;
-
-
     }
 
 
@@ -82,31 +81,46 @@ public class TimeInDayadapter extends RecyclerView.Adapter<TimeInDayadapter.View
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position)
+    {
         Button z=holder.addTimeText;
         final TimeClass timeClass = mTimeList.get(position);
         holder.textTime.setText(timeClass.getmTime() );
         holder.clockImg.setImageResource(timeClass.getmImgSrc());
-        int i=0;
             if (mCurrentDate.contains(timeClass.getmTime())) {
-                i++;
-                if (i>2) {
-
-                   holder.textTime.setPaintFlags(holder.textTime.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                    // And to undo it: paintFlags = paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
-                    holder.addTimeText.setText(" محجوز ");
-                    holder.addTimeText.setBackgroundColor(Color.GRAY);
-                    holder.addTimeText.setEnabled(false);
-                    Toast.makeText(mContext, mCurrentDate.toString(), Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    changeButon(z,timeClass.getmTime());
-                }
-                }
+                    int i= countOfTime( mCurrentDate,timeClass.getmTime());
+                  if(i>1) {
+                      holder.textTime.setPaintFlags(holder.textTime.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                      // And to undo it: paintFlags = paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                      holder.addTimeText.setText(" محجوز ");
+                      holder.addTimeText.setBackgroundColor(Color.GRAY);
+                      holder.addTimeText.setEnabled(false);
+                      Toast.makeText(mContext, mCurrentDate.toString(), Toast.LENGTH_SHORT).show();
+                  }
+                  else {
+                      changeButon(z,timeClass.getmTime());
+                  }
+            }
              else {
                 changeButon(z,timeClass.getmTime());
              }
     }
+    private int countOfTime(List<String> mCurrentDate, String getmTime) {
+        counter=0;
+        for (String item :mCurrentDate)
+        {
+            Log.v("itemgetmitem",item+"---" + getmTime);
+            if (item.equals(getmTime))
+            {
+                counter++;
+            Log.v("CounterCounter",counter+"");
+            }
+            else
+            Log.v("falseCounter",counter+"");
+        }
+      return counter;
+    }
+
     public void changeButon(Button x, final String time)
     {
        x.setOnClickListener(new View.OnClickListener() {
@@ -160,10 +174,11 @@ public class TimeInDayadapter extends RecyclerView.Adapter<TimeInDayadapter.View
                                         int which) {
 
                      ModelProduct  ModelProductWithTime=new ModelProduct(mModelProduct.getTextProduct(),mModelProduct.getSubTextProduct(),
-                         mModelProduct.getPriceProduct(),mModelProduct.getDurationProduct(),mModelProduct.getDurationProduct(),time,mSelectDate);
+                         mModelProduct.getPriceProduct(),mModelProduct.getDurationProduct(),mModelProduct.getDurationProduct(),time,mSelectDate,mModelProduct.getImageHair());
                         globalControl=(Controller)mContext.getApplicationContext();
                         globalControl.setProducts(ModelProductWithTime);
                         Paper.book().write("modelproductList",globalControl.AllProduct());
+
                         Intent intent =new Intent(mContext,checkOut.class);
                         mContext.startActivity(intent);
 
@@ -179,6 +194,7 @@ public class TimeInDayadapter extends RecyclerView.Adapter<TimeInDayadapter.View
 
             }
         });
+        ((book)mContext).setupBadge();
         BadgeClass badgeClass=new BadgeClass();
         badgeClass.setbadgeConnect(mContext);
         AlertDialog alertDialog=dialog.create();

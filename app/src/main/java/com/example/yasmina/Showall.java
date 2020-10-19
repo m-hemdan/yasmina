@@ -118,7 +118,7 @@ public class Showall extends AppCompatActivity {
                     final ProgressDialog progressDialog = new ProgressDialog(Showall.this);
                     progressDialog.setTitle("Uploading...");
                     progressDialog.show();
-                    StorageReference ref = storageRef.child("images/" + UUID.randomUUID().toString());
+                    StorageReference ref = storageRef.child("face_liner/" + UUID.randomUUID().toString());
                     Bitmap bmp = null;
                     try {
                         bmp = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
@@ -140,7 +140,7 @@ public class Showall extends AppCompatActivity {
                                     SimpleDateFormat ISO_8601_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:sss'Z'");
                                     String now = ISO_8601_FORMAT.format(new Date());
                                     Content content = new Content(nameEdit.getText().toString(), downloadUrl.toString(), arrImage , 1, "subText", "0",1);
-                                    mDatabase.child("HairTable").push().setValue(content);
+                                    mDatabase.child("faceSection").push().setValue(content);
                                     progressDialog.dismiss();
                                     Toast.makeText(Showall.this, "Uploaded", Toast.LENGTH_SHORT).show();
                                 }

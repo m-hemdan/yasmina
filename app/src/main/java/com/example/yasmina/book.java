@@ -108,7 +108,7 @@ public class book extends AppCompatActivity  {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId()==R.id.shopping_card_id){
-                    Toast.makeText(getApplication(),"asasa",Toast.LENGTH_LONG).show();
+                  //  Toast.makeText(getApplication(),"asasa",Toast.LENGTH_LONG).show();
                 }
                 return false;
 
@@ -116,7 +116,7 @@ public class book extends AppCompatActivity  {
         });
 
          mCartItemCount=controller.AllProduct().size();
-
+        setupBadge();
 
         InternetConnection internetConnection=new InternetConnection();
 
@@ -147,22 +147,18 @@ public class book extends AppCompatActivity  {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         };
         databaseReference.addChildEventListener(childEventListener);
@@ -223,13 +219,8 @@ public class book extends AppCompatActivity  {
                     return false;
                 }
             });
-
     }
-
-
-
-
-    @SuppressLint("ResourceAsColor")
+   @SuppressLint("ResourceAsColor")
         private void configureNavigationDrawer() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navView = (NavigationView) findViewById(R.id.navigation);
@@ -262,15 +253,12 @@ public class book extends AppCompatActivity  {
             }
         });
     }
-
-
     @SuppressLint("ResourceAsColor")
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
-
         SearchManager searchManager =
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView =
@@ -312,7 +300,6 @@ public class book extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 m.performIdentifierAction(item.getItemId(), 0);
-              //  Toast.makeText(getApplication(),"ashhhgasa",Toast.LENGTH_LONG).show();
                 Intent intent1=new Intent(getApplication(),checkOut.class);
                 startActivity(intent1);
             }
@@ -320,7 +307,7 @@ public class book extends AppCompatActivity  {
          return true;
     }
 
-    private void setupBadge() {
+    public void setupBadge() {
         if (textCartItemCount != null) {
             if (controller.AllProduct().size() == 0) {
                     textCartItemCount.setVisibility(View.GONE);
@@ -349,7 +336,7 @@ public class book extends AppCompatActivity  {
                 return  true;
             case R.id.shopping_card_id:
                 Toast.makeText(this,"asasa",Toast.LENGTH_LONG).show();
-                Intent intent1=new Intent(getApplication(),LoginActivity.class);
+                Intent intent1=new Intent(getApplication(),checkOut.class);
                 startActivity(intent1);
                return true;
             case R.id.more:
@@ -364,8 +351,6 @@ public class book extends AppCompatActivity  {
                 return true;
         }
     }
-
-
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);

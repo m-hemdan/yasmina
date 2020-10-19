@@ -41,15 +41,20 @@ public class Controller extends Application {
         LastPrice lastPrice=new LastPrice();
         int totalSum=0;
         int sumDuration=0;
+        int numberOfItem=0;
         for (int i=0;i<myProducts.size();i++)
         {
             totalSum+=Integer.valueOf(myProducts.get(i).getPriceProduct());
-
-
-        }
-        lastPrice=new LastPrice(totalSum,0,0);
+            sumDuration+=Integer.valueOf(myProducts.get(i).getDurationProduct());
+            numberOfItem=myProducts.size();
+         }
+        lastPrice=new LastPrice(totalSum,sumDuration,numberOfItem);
         return  lastPrice;
     }
+   public void changePrice(ModelProduct modelProduct)
+   {
+
+   }
 
 
 
